@@ -4,6 +4,17 @@ const ui = new UI();
 
 document.addEventListener('DOMContentLoaded', getWeather);
 
+document.getElementById('w-change-btn').addEventListener('click', function(e){
+
+    const city = document.getElementById('city').value;
+
+    weather.changeLoc(city);
+
+    getWeather();
+
+    $('#locModal').modal('hide');
+})
+
 function getWeather(){
 
     weather.getWeather()
@@ -12,6 +23,7 @@ function getWeather(){
     .catch( error => console.log('Error: ' + error));
 
 }
+
 
 
 
